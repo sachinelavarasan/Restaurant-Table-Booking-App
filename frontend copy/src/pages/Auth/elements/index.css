@@ -10,21 +10,20 @@
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #2b7a78 50%, #3aafa9 50%);
   bottom: 0;
-  left: -50%;
   opacity: 0.5;
   position: fixed;
-  right: -50%;
   top: 0;
-  width: 200vw; /* extended to allow sliding */
   height: 100vh;
 }
 
 .auth-bg2 {
   animation: slide 4s ease-in-out infinite alternate-reverse;
+  width: 100%;
 }
 
 .auth-bg3 {
   animation: slide 5s ease-in-out infinite alternate;
+  width: 100%;
 }
 
 /* Centered content box */

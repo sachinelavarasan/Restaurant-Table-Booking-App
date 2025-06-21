@@ -75,7 +75,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsOrgDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/organisation/basic-info`);
+                        history(`/admin/organisation/basic-info`);
                       }}
                       type="button"
                     >
@@ -92,7 +92,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsOrgDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/organisation/departments`);
+                        history(`/admin/organisation/departments`);
                       }}
                       type="button"
                     >
@@ -107,7 +107,7 @@ const SideDrawer = ({
                           : ""
                       }`}
                       onClick={() => {
-                        history.push(`/admin/organisation/academicyear`);
+                        history(`/admin/organisation/academicyear`);
                         setIsOrgDropdownOpen(false);
                         setSideDrawerOpen(false);
                       }}
@@ -153,7 +153,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsQualificationDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/qualifications`);
+                        history(`/admin/qualifications`);
                       }}
                       type="button"
                     >
@@ -170,7 +170,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsQualificationDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/qualifications/units`);
+                        history(`/admin/qualifications/units`);
                       }}
                       type="button"
                     >
@@ -225,7 +225,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsUserDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/users/admin`);
+                        history(`/admin/users/admin`);
                       }}
                       type="button"
                     >
@@ -240,7 +240,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsUserDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/users/student`);
+                        history(`/admin/users/student`);
                       }}
                       type="button"
                     >
@@ -277,7 +277,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsSessionDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/sessions`);
+                        history(`/admin/sessions`);
                       }}
                       type="button"
                     >
@@ -294,7 +294,7 @@ const SideDrawer = ({
                       onClick={() => {
                         setIsSessionDropdownOpen(false);
                         setSideDrawerOpen(false);
-                        history.push(`/admin/sessions/calendar`);
+                        history(`/admin/sessions/calendar`);
                       }}
                       type="button"
                     >

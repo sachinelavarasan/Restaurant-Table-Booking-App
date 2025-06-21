@@ -57,7 +57,7 @@ export const HotelList = () => {
                 title={item.hotel_name}
                 description={item.address}
                 onClick={() => {
-                  history.push(`/user/hotelList/${item.hotel_id}/view`);
+                  history(`/admin/hotelList/${item.hotel_id}/view`);
                 }}
               />
             </div>

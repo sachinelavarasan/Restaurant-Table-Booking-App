@@ -68,7 +68,9 @@ export const HotelTables = ({ hotelTables, isListLoading, hotelId }) => {
           buttonLabel="Add Booking"
           onButtonClick={() => {
             if (hotelTables.length) {
-              history.replace(`/user/hotelList/${hotelId}/book-table`);
+              history(`/admin/hotelList/${hotelId}/book-table`, {
+                replace: true,
+              });
             }
           }}
         />

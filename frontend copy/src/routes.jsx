@@ -22,17 +22,22 @@ import {
   HistoryList,
 } from "./pages/Admin/pages-new";
 
-import { LoginRoute } from "./PrivateRoute"; // Assuming this is your wrapper for auth routes
+import { LoginRoute, PrivateRoute } from "./PrivateRoute"; // Assuming this is your wrapper for auth routes
 import ForgotPasswordOld from "./pages/ForgotPasswordOld";
 import ResetPassword from "./pages/PasswordReset";
 import Signup from "./pages/SignupOld";
 import ActivateUser from "./pages/ActivateUser";
 import { ForgotPassword, Login, Register } from "./pages/Auth/pages";
+import App from "./App";
 
 const router = createBrowserRouter([
   {
+    path: "/",
+    element: <App />,
+  },
+  {
     path: "/admin",
-    element: <Admin />,
+    element: <PrivateRoute element={<Admin />} />,
     children: [
       { index: true, element: <HotelList /> },
       { path: "history", element: <HistoryList /> },
@@ -44,7 +49,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/hotel",
-    element: <Hotel />,
+    element: <PrivateRoute element={<Hotel />} />,
     children: [
       { index: true, element: <HotelMenuList /> },
       { path: "offers", element: <OffersList /> },

@@ -40,7 +40,7 @@ const SuccessMessage = () => {
           className="btn mt-4 ml-auto mr-auto"
           type="submit"
           onClick={() => {
-            history.push("/login");
+            history("/login");
           }}
         >
           Login to JungleCat

@@ -11,7 +11,7 @@ export const ErrorAlert = ({ isVisible, message }) => (
         animate={{
           translateY: 0,
         }}
-        className="align-items-center col-lg-6 col-md-12 d-flex justify-content-center offset-lg-6 position-fixed py-3 w-100"
+        className="align-items-center col-lg-6 col-md-12 d-flex justify-content-center position-fixed py-3 w-100"
         exit={{
           translateY: "-3.25rem",
         }}

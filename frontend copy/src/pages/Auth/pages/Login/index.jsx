@@ -24,6 +24,7 @@ export const Login = () => {
   const {
     control,
     formState: { errors },
+
     handleSubmit,
   } = useForm({
     defaultValues: {
@@ -41,7 +42,7 @@ export const Login = () => {
       dispatch(
         logIn(data, (userProfile) => {
           const isAdmin = userProfile?.user_type === 1;
-          history.push(isAdmin ? "/hotel" : "/user");
+          history(isAdmin ? "/hotel" : "/admin");
         })
       );
     },
@@ -58,6 +59,7 @@ export const Login = () => {
     clearServerError,
     FIELDS_IN_ORDER
   );
+
 
   return (
     <div className="no-gutters row auth-container">
@@ -84,9 +86,9 @@ export const Login = () => {
               <Controller
                 control={control}
                 name="email"
-                render={(fields) => (
+                render={({ field }) => (
                   <TextInput
-                    {...fields}
+                    {...field}
                     autoFocus
                     className="input-field mb-2"
                     hasError={hasServerError || !!errors.email}
@@ -98,9 +100,9 @@ export const Login = () => {
               <Controller
                 control={control}
                 name="password"
-                render={(fields) => (
+                render={({ field }) => (
                   <TextInput
-                    {...fields}
+                    {...field}
                     className="input-field mb-2 mt-3"
                     hasError={hasServerError || !!errors.password}
                     label="Password"

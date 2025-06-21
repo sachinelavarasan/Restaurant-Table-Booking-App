@@ -66,8 +66,8 @@ export const UserForm = ({ onNavigateBack, accountType }) => {
       };
       dispatch(
         registerTeacher(details, () => {
-          history.push(`/register-success?email=${data.email}`);
-          // history.push(`/login`)
+          history(`/register-success?email=${data.email}`);
+          // history(`/login`)
         })
       );
     },

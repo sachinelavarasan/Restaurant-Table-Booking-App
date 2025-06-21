@@ -30,12 +30,12 @@ function App() {
             userType === "1" ? (
               <Navigate to="/hotel" replace />
             ) : (
-              <Navigate to="/user" replace />
+              <Navigate to="/admin" replace />
             )
           }
         />
 
-        <Route path="/user/*" element={<User />} />
+        {/* <Route path="/user/*" element={<User />} />
 
         <Route
           path="/hotel/*"
@@ -66,7 +66,7 @@ function App() {
         <Route
           path="/register-success"
           element={<LoginRoute element={<Signup />} />}
-        />
+        /> */}
       </Routes>
     </>
   );

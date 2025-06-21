@@ -91,14 +91,14 @@ export const Notification = ({
                           item?.al_id_auditlog_type === 11 ||
                           item?.al_id_auditlog_type === 12
                         ) {
-                          history.push("/admin/users/admin");
+                          history("/admin/users/admin");
                         } else if (item?.al_id_auditlog_type === 10) {
-                          history.push("/admin/users/student");
+                          history("/admin/users/student");
                         } else if (
                           item?.al_id_auditlog_type === 19 ||
                           item?.al_id_auditlog_type === 24
                         ) {
-                          history.push(
+                          history(
                             `/stream/${item?.aoui_id_orgunitinstance}/live`
                           );
                         }
@@ -142,9 +142,9 @@ export const Notification = ({
                   <button
                     className="view-all-notification"
                     onClick={() => {
-                      if (isAdmin) history.push("/admin/all-notification");
-                      if (isTeacher) history.push("/all-notification");
-                      if (isStudent) history.push("/all-notification");
+                      if (isAdmin) history("/admin/all-notification");
+                      if (isTeacher) history("/all-notification");
+                      if (isStudent) history("/all-notification");
                       onClose();
                     }}
                     type="button"

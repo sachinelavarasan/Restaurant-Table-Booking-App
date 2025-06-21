@@ -11,7 +11,7 @@ export const Footer = ({ isAddCourseLoading, onSubmit }) => {
   const history = useNavigate();
 
   const onButtonCancel = () => {
-    history.replace(`/admin/courses/active-courses`);
+    history(`/admin/courses/active-courses`, { replace: true });
   };
 
   return (

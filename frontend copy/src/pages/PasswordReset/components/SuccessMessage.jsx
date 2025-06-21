@@ -90,7 +90,7 @@ const SuccessMessage = () => {
             borderRadius="8px"
             padding="16px 24px"
             onClick={() => {
-              history.push("/login");
+              history("/login");
             }}
           >
             Login to Website

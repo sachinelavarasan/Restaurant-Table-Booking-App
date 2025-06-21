@@ -47,6 +47,7 @@ const Navbar = (properties) => {
     const token = localStorage.getItem("jwtToken");
     return !!token;
   };
+  console.log(isAuthenticated())
 
   /**
    * fetch Class Details on class Id change
@@ -57,7 +58,7 @@ const Navbar = (properties) => {
   const logoutUser = () => {
     setIsProfileMenuOpen(false);
     dispatch(logout());
-    history.push("/login");
+    history("/login");
     // socket.emit(SOCKET_EVENTS.CS_OFFLINE, {
     //   roomId,
     //   userId,
@@ -69,12 +70,14 @@ const Navbar = (properties) => {
   const isTeacher = profileType === 2;
 
   const userProfile = authState?.user?.userProfile;
+
+  console.log(authState?.user)
   return (
     <>
-      {!isAuthenticated() && (
+      {isAuthenticated() && (
         <Nav className="navbar navbar-expand-sm p-0 fixed-top" {...properties}>
           {/* eslint-disable-next-line no-nested-ternary */}
-          {profileType !== 1 ? (
+          {profileType === 1 ? (
             <ul className="col p-0 navbar-nav justify-content-center nav-pills h-100 d-flex">
               <li className="nav-item admin-navitem active">
                 <NavLink
@@ -140,7 +143,7 @@ const Navbar = (properties) => {
                             className="organisation-dropdown-item"
                             onClick={() => {
                               setIsReservationDropdownOpen(false);
-                              history.push(`/hotel/reservations`);
+                              history(`/hotel/reservations`);
                             }}
                             type="button"
                             id="admin-teacher-id"
@@ -155,7 +158,7 @@ const Navbar = (properties) => {
                             className="organisation-dropdown-item"
                             onClick={() => {
                               setIsReservationDropdownOpen(false);
-                              history.push(`/hotel/reservations/calender`);
+                              history(`/hotel/reservations/calender`);
                             }}
                             type="button"
                             id="student-id"
@@ -212,7 +215,7 @@ const Navbar = (properties) => {
                               className="organisation-dropdown-item"
                               onClick={() => {
                                 setIsOrgDropdownOpen(false);
-                                history.push(`/admin/organisation/basic-info`);
+                                history(`/admin/organisation/basic-info`);
                               }}
                               type="button"
                               id="basic-info-id"
@@ -225,7 +228,7 @@ const Navbar = (properties) => {
                               className="organisation-dropdown-item"
                               onClick={() => {
                                 setIsOrgDropdownOpen(false);
-                                history.push(`/admin/organisation/departments`);
+                                history(`/admin/organisation/departments`);
                               }}
                               type="button"
                               id="department-id"
@@ -237,7 +240,7 @@ const Navbar = (properties) => {
                             <button
                               className="organisation-dropdown-item"
                               onClick={() => {
-                                history.push(
+                                history(
                                   `/admin/organisation/academicyear`,
                                 );
                                 setIsOrgDropdownOpen(false);
@@ -313,7 +316,7 @@ const Navbar = (properties) => {
                               className="organisation-dropdown-item"
                               onClick={() => {
                                 setIsUserDropdownOpen(false);
-                                history.push(`/admin/users/admin`);
+                                history(`/admin/users/admin`);
                               }}
                               type="button"
                               id="admin-teacher-id"
@@ -328,7 +331,7 @@ const Navbar = (properties) => {
                               className="organisation-dropdown-item"
                               onClick={() => {
                                 setIsUserDropdownOpen(false);
-                                history.push(`/admin/users/teacher`);
+                                history(`/admin/users/teacher`);
                               }}
                               type="button"
                             >
@@ -340,7 +343,7 @@ const Navbar = (properties) => {
                               className="organisation-dropdown-item"
                               onClick={() => {
                                 setIsUserDropdownOpen(false);
-                                history.push(`/admin/users/student`);
+                                history(`/admin/users/student`);
                               }}
                               type="button"
                               id="student-id"
@@ -384,7 +387,7 @@ const Navbar = (properties) => {
                     <NavLink
                       className="nav-link d-flex align-items-center"
                       activeClassName="activeLink"
-                      to="/user"
+                      to="/admin"
                       exact
                       id="stream-id"
                     >
@@ -395,7 +398,7 @@ const Navbar = (properties) => {
                     <NavLink
                       className="nav-link d-flex align-items-center"
                       activeClassName="activeLink"
-                      to="/user/history"
+                      to="/admin/history"
                       exact
                       id="dashboard-id"
                     >
@@ -464,7 +467,7 @@ const Navbar = (properties) => {
                 {isTeacher ? (
                   <button
                     className="bg-white border-0 home-icon"
-                    onClick={() => history.push("/classes")}
+                    onClick={() => history("/classes")}
                     type="submit"
                     id="home-icon-id"
                   >

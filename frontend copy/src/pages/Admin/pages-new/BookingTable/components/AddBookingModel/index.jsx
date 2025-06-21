@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useCallback, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { replace, useNavigate } from "react-router";
 
 import {
   userSelector,
@@ -76,7 +76,7 @@ export const AddBookingModel = ({
           bookTable(details, hotelId, () => {
             showToast(AddToastSuccessImg, `Table booked successfully `);
             onHide();
-            history.replace(`/user/hotelList/${hotelId}/view`);
+            history(`/admin/hotelList/${hotelId}/view`, { replace: true });
           })
         );
       }

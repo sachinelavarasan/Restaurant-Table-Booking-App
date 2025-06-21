@@ -209,7 +209,7 @@
 //                             onClick={() => {
 //                               setIsSessionDropdownOpen(false)
 //                               setIsUserDropdownOpen(false)
-//                               history.push(`/admin/organisation/basic-info`)
+//                               history(`/admin/organisation/basic-info`)
 //                             }}
 //                             type="button"
 //                           >
@@ -234,7 +234,7 @@
 //                             onClick={() => {
 //                               setIsSessionDropdownOpen(false)
 //                               setIsUserDropdownOpen(false)
-//                               history.push(`/admin/organisation/departments`)
+//                               history(`/admin/organisation/departments`)
 //                             }}
 //                             type="button"
 //                           >
@@ -257,7 +257,7 @@
 //                               ),
 //                             })}
 //                             onClick={() => {
-//                               history.push(`/admin/organisation/academicyear`)
+//                               history(`/admin/organisation/academicyear`)
 //                               setIsSessionDropdownOpen(false)
 //                               setIsUserDropdownOpen(false)
 //                             }}
@@ -354,7 +354,7 @@
 //                             onClick={() => {
 //                               setIsSessionDropdownOpen(false)
 //                               setIsOrgDropdownOpen(false)
-//                               history.push(`/admin/users/admin`)
+//                               history(`/admin/users/admin`)
 //                             }}
 //                             type="button"
 //                           >
@@ -376,7 +376,7 @@
 //                             onClick={() => {
 //                               setIsSessionDropdownOpen(false)
 //                               setIsOrgDropdownOpen(false)
-//                               history.push(`/admin/users/student`)
+//                               history(`/admin/users/student`)
 //                             }}
 //                             type="button"
 //                           >
@@ -550,7 +550,7 @@
 //                             onClick={() => {
 //                               setIsUserDropdownOpen(false)
 //                               setIsOrgDropdownOpen(false)
-//                               history.push(`/admin/sessions`)
+//                               history(`/admin/sessions`)
 //                             }}
 //                             type="button"
 //                           >
@@ -571,7 +571,7 @@
 //                             onClick={() => {
 //                               setIsUserDropdownOpen(false)
 //                               setIsOrgDropdownOpen(false)
-//                               history.push(`/admin/sessions/calendar`)
+//                               history(`/admin/sessions/calendar`)
 //                             }}
 //                             type="button"
 //                           >

@@ -42,7 +42,7 @@ export const ForgotPassword = () => {
     (data) => {
       dispatch(
         resetPassword(data, () => {
-          history.push(`/reset-password-confirmation?email=${data.email}`);
+          history(`/reset-password-confirmation?email=${data.email}`);
         })
       );
     },

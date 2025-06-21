@@ -1,14 +1,14 @@
-import classNames from "classnames"
-import { AnimatePresence, motion } from "framer-motion"
-import PropTypes from "prop-types"
-import { useState, forwardRef, useMemo } from "react"
+import classNames from "classnames";
+import { AnimatePresence, motion } from "framer-motion";
+import PropTypes from "prop-types";
+import { useState, forwardRef, useMemo } from "react";
 
-import EyeCloseIcon from "../../../assets/icons/refactor/eye-close.svg"
-import EyeOpenIcon from "../../../assets/icons/refactor/eye-open.svg"
-import FailIcon from "../../../assets/icons/refactor/text-input-fail.svg"
-import SpinnerIcon from "../../../assets/icons/refactor/text-input-spinner.svg"
-import SuccessIcon from "../../../assets/icons/refactor/text-input-success.svg"
-import { InputElementContainer, TextInputContainer } from "./elements"
+import EyeCloseIcon from "../../../assets/icons/refactor/eye-close.svg";
+import EyeOpenIcon from "../../../assets/icons/refactor/eye-open.svg";
+import FailIcon from "../../../assets/icons/refactor/text-input-fail.svg";
+import SpinnerIcon from "../../../assets/icons/refactor/text-input-spinner.svg";
+import SuccessIcon from "../../../assets/icons/refactor/text-input-success.svg";
+import { InputElementContainer, TextInputContainer } from "./elements";
 
 export const TextInput = forwardRef(
   (
@@ -32,8 +32,8 @@ export const TextInput = forwardRef(
     },
     ref
   ) => {
-    const [isFocused, setIsFocused] = useState(false)
-    const [isVisible, setIsVisible] = useState(false)
+    const [isFocused, setIsFocused] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const StatusIcon = useMemo(() => {
       if (isLoading) {
@@ -43,7 +43,7 @@ export const TextInput = forwardRef(
             className="position-absolute spinner-icon status-icon"
             src={SpinnerIcon}
           />
-        )
+        );
       }
 
       if (hasSucceeded) {
@@ -53,7 +53,7 @@ export const TextInput = forwardRef(
             className="position-absolute status-icon"
             src={SuccessIcon}
           />
-        )
+        );
       }
 
       if (hasFailed) {
@@ -63,11 +63,11 @@ export const TextInput = forwardRef(
             className="position-absolute status-icon"
             src={FailIcon}
           />
-        )
+        );
       }
 
-      return null
-    }, [hasFailed, hasSucceeded, isLoading])
+      return null;
+    }, [hasFailed, hasSucceeded, isLoading]);
 
     return (
       <TextInputContainer
@@ -99,7 +99,7 @@ export const TextInput = forwardRef(
           )}
         >
           <input
-            {...rest}
+            {...rest} // this spreads `value`, `onChange`, `onBlur` etc. from Controller
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus={autoFocus}
             className={classNames("text-input", "w-100", {
@@ -107,22 +107,23 @@ export const TextInput = forwardRef(
               "pr-5": type === "password",
             })}
             id={id}
-            onFocus={() => {
-              setIsFocused(true)
+            onFocus={(e) => {
+              setIsFocused(true);
+              rest?.onFocus?.(e);
             }}
             placeholder={placeholder}
             ref={ref}
             type={isVisible ? "text" : type}
             onBlur={(e) => {
-              // rest.onBlur(e)
-              setIsFocused(false)
+              rest?.onBlur?.(e);
+              setIsFocused(false);
             }}
           />
           {type === "password" ? (
             <button
               className="align-items-center d-flex justify-content-center position-absolute toggle-visibility-button"
               onClick={() => {
-                setIsVisible((previousValue) => !previousValue)
+                setIsVisible((previousValue) => !previousValue);
               }}
               type="button"
             >
@@ -161,9 +162,9 @@ export const TextInput = forwardRef(
           ) : null}
         </AnimatePresence>
       </TextInputContainer>
-    )
+    );
   }
-)
+);
 
 TextInput.defaultProps = {
   autoFocus: false,
@@ -181,7 +182,7 @@ TextInput.defaultProps = {
   placeholder: "",
   type: "text",
   width: "",
-}
+};
 
 TextInput.propTypes = {
   autoFocus: PropTypes.bool,
@@ -199,4 +200,4 @@ TextInput.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string,
   width: PropTypes.string,
-}
+};

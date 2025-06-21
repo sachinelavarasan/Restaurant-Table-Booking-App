@@ -16,6 +16,7 @@ export const PrivateRoute = ({ element, isAdmin, isTeacher }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("token",token)
     if (token) {
       dispatch(
         fetchProfile(() => {
@@ -35,7 +36,7 @@ export const PrivateRoute = ({ element, isAdmin, isTeacher }) => {
 
   if (isAdmin && userType !== "1") {
     // If route requires admin and user is not admin, redirect to user homepage
-    return <Navigate to="/user" state={{ from: location }} replace />;
+    return <Navigate to="/admin" state={{ from: location }} replace />;
   }
 
   if (isTeacher && userType !== "2") {
@@ -52,7 +53,7 @@ export const LoginRoute = ({ element }) => {
 
   if (token) {
     // Already logged in, redirect away from login/register pages
-    return <Navigate to="/classes" replace />;
+    return <Navigate to="/hotel" replace />;
   }
 
   return element;

@@ -11,14 +11,14 @@ import CloseIcon from "../../../../../../assets/icons/close-modal.svg";
 export const Header = ({ hotel }) => {
   const history = useNavigate();
   const onButtonCancel = () => {
-    history.replace(`/user`);
+    history(`/admin`, { replace: true });
   };
   const { hotelId } = useParams();
   const onButtonViewComments = () => {
-    history.push(`/user/hotelList/${hotelId}/view-comments`);
+    history(`/admin/hotelList/${hotelId}/view-comments`);
   };
   const onButtonOffersMenu = () => {
-    history.push(`/user/hotelList/${hotelId}/menu-offer`);
+    history(`/admin/hotelList/${hotelId}/menu-offer`);
   };
   return (
     <HeaderContainer>
