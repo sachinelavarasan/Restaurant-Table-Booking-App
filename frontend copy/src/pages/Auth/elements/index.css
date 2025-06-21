@@ -1,0 +1,84 @@
+.auth-container {
+  margin: 0 -0.9375rem;
+  height: 100vh;
+  overflow-y: hidden;
+  width: 100vw;
+}
+
+/* Background animation layers */
+.auth-bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #2b7a78 50%, #3aafa9 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  width: 200vw; /* extended to allow sliding */
+  height: 100vh;
+}
+
+.auth-bg2 {
+  animation: slide 4s ease-in-out infinite alternate-reverse;
+}
+
+.auth-bg3 {
+  animation: slide 5s ease-in-out infinite alternate;
+}
+
+/* Centered content box */
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+/* Main content styling */
+.main-section {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-section .main-content {
+  max-width: 27rem;
+  background: #17252a;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+/* Typography */
+h1 {
+  font-family: monospace;
+}
+
+.title {
+  color: #3aafa9;
+}
+
+.subtitle {
+  color: white;
+}
+
+/* Form labels */
+.input-field label,
+.input-fields label {
+  color: white;
+}
