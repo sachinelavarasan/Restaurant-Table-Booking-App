@@ -1,21 +1,20 @@
 import styled, { css } from "styled-components"
 import { motion } from "framer-motion"
 
-export const ShowCommentsCardContainer = styled(motion.div)`
+export const ShowCommentsCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: calc(100% - 1.875rem);
-  position: absolute;
-  left: 0.9375rem;
-  top: 0;
-  height: 100%;
+  /* width: calc(100% - 1.875rem); */
+  /* position: absolute; */
+  /* left: 0.9375rem; */
+  /* top: 0; */
+  /* height: 100%; */
   overflow: hidden;
   box-shadow: 0px 0px 7px #e1e5ee;
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   &.is-user {
     /* background-color: #3aafa9; */
   }
@@ -179,7 +178,7 @@ export const ShowCommentsCardContainer = styled(motion.div)`
   }
 `
 
-export const FileContainer = styled.button`
+export const FileContainer = styled.div`
   outline: none;
 
   border: unset;

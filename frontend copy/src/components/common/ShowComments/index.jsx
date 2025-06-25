@@ -50,12 +50,12 @@ export const ShowComments = ({
         className={classNames("flex-shrink-0", className)}
         {...rest}
       >
-        <FileContainer height={height}>
+        {/* <FileContainer height={height}> */}
           <div className="comment-content">
-            <button
+            <div
               className="comment-messages"
-              type="button"
-              onClick={() => {}}
+              // type="button"
+              // onClick={() => {}}
             >
               <div className="creator-profile">
                 <span className="align-items-center circle d-flex justify-content-center">
@@ -115,10 +115,10 @@ export const ShowComments = ({
                   </div>
                 </div>
               </div>
-            </button>
+            </div>
             {/* ))} */}
           </div>
-        </FileContainer>
+        {/* </FileContainer> */}
       </ShowCommentsCardContainer>
       <ShowMoreComments
         show={isShowMoreCommentModal}

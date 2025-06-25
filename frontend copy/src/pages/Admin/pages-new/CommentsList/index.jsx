@@ -96,7 +96,7 @@ export const CommentsList = () => {
               <ShowComments
                 data={comments}
                 height="100%"
-                profile={`${item?.UserProfile?.first_name[0]}${item?.UserProfile?.last_name[0]}`}
+                profile={`${item?.UserProfile?.first_name[0]}${item?.UserProfile?.last_name}`}
                 comments={item?.comments_text}
                 time={moment(item?.comments_created_at).format(
                   "D MMM YYYY, h:mma"
@@ -128,7 +128,7 @@ export const CommentsList = () => {
           setCommentModal(false);
         }}
       >
-        <div className="Subtitle">
+        <div className="subtitle">
           <p>Feel free to comment about your experience</p>
         </div>
         <div className="feed-back">

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const CommentsListContainer = styled.div`
-  background-color: #f4f5f8;
+  /* background-color: #f4f5f8; */
   min-height: 100vh;
   margin: 0 -0.9375rem;
   padding: 7.0625rem 4rem 4.0625rem 4rem;
@@ -17,7 +17,7 @@ export const CommentsListContainer = styled.div`
       margin-bottom: 1rem;
     }
   }
-  .Subtitle {
+  .subtitle {
     margin: 0 1.5rem;
     border-radius: 0.5rem;
     p {
@@ -31,7 +31,7 @@ export const CommentsListContainer = styled.div`
     margin: 1.5rem 1.5rem 0 1.5rem;
   }
   .card-class {
-    padding-bottom: calc(10%);
+    /* padding-bottom: calc(10%); */
   }
   .add-comments-button {
     background-color: red;
